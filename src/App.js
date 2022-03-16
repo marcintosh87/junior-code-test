@@ -1,4 +1,4 @@
-import { CircularProgress, Container, Typography } from "@mui/material";
+import { Box, Container, Divider, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import "./App.css";
 import ArtCard from "./components/ArtCard";
@@ -31,22 +31,25 @@ function App() {
   }, []);
 
   return (
-    <Container className="App">
-      <Typography variant="h3" mt={3}>
-        Junior Engineer Code Test
-      </Typography>
+    <Box className="App" component={"main"}>
+      <Container component={"section"}>
+        <Typography variant="h3" pt={4} color={"white"} mb={3}>
+          Junior Engineer Code Test
+        </Typography>
+        <Divider sx={{ color: "white" }} variant={"middle"} />
 
-      {loading ? (
-        <Loading />
-      ) : (
-        <ArtCard
-          title={artData.title}
-          image={artData.primaryImage}
-          artistName={artData.artistDisplayName}
-          learnMoreUrl={artData.objectURL}
-        />
-      )}
-    </Container>
+        {loading ? (
+          <Loading error={error} />
+        ) : (
+          <ArtCard
+            title={artData.title}
+            image={artData.primaryImage}
+            artistName={artData.artistDisplayName}
+            learnMoreUrl={artData.objectURL}
+          />
+        )}
+      </Container>
+    </Box>
   );
 }
 

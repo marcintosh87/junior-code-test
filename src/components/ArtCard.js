@@ -11,7 +11,11 @@ import React from "react";
 
 export default function ArtCard({ title, image, artistName, learnMoreUrl }) {
   return (
-    <Card sx={{ margin: 4 }}>
+    <Card
+      sx={{ margin: 4, boxShadow: 3 }}
+      className="scale-up-center"
+      component={"article"}
+    >
       <CardMedia
         component="img"
         sx={{ height: "100%", width: "100%" }}
