@@ -37,7 +37,7 @@ function App() {
           Junior Engineer Code Test
         </Typography>
         <Divider sx={{ color: "white" }} variant={"middle"} />
-
+        {/* conditionals added for loading state, if content is not loaded, animation will show else primary content will be displayed */}
         {loading ? (
           <Loading error={error} />
         ) : (
